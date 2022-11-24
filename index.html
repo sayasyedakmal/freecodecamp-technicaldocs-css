@@ -5,11 +5,549 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Documentation</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll(); //this to highlight all
+
+        //below is to highlight inline code element
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
+<!-- https://lucidar.me/en/web-dev-class/lesson-2-09-most-used-css-properties/ -->
 
 <body>
-    <h1>CSS Documentation</h1>
+    <nav id="navbar">
+        <header>CSS Properties</header>
+        <ul>
+            <li><a href="#overview" class="nav-link">overview</a></li>
+            <li><a href="#color" class="nav-link">color</a></li>
+            <li><a href="#background-color" class="nav-link">background-color</a></li>
+            <li><a href="#background-image" class="nav-link">background-image</a></li>
+            <li><a href="#display" class="nav-link">display</a></li>
+            <li><a href="#width" class="nav-link">width</a></li>
+            <li><a href="#height" class="nav-link">height</a></li>
+            <li><a href="#min-width" class="nav-link">min-width</a></li>
+            <li><a href="#min-height" class="nav-link">min-height</a></li>
+            <li><a href="#max-width" class="nav-link">max-width</a></li>
+            <li><a href="#max-height" class="nav-link">max-height</a></li>
+            <li><a href="#margin" class="nav-link">margin</a></li>
+            <li><a href="#padding" class="nav-link">padding</a></li>
+            <li><a href="#border" class="nav-link">border</a></li>
+            <li><a href="#border-color" class="nav-link">border-color</a></li>
+            <li><a href="#border-width" class="nav-link">border-width</a></li>
+            <li><a href="#border-style" class="nav-link">border-style</a></li>
+            <li><a href="#border-radius" class="nav-link">border-radius</a></li>
+            <li><a href="#font" class="nav-link">font</a></li>
+            <li><a href="#font-family" class="nav-link">font-family</a></li>
+            <li><a href="#font-style" class="nav-link">font-style</a></li>
+            <li><a href="#font-weight" class="nav-link">font-weight</a></li>
+            <li><a href="#position" class="nav-link">position</a></li>
+            <li><a href="#z-index" class="nav-link">z-index</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="overview">
+            <header>
+                <h2>overview</h2>
+            </header>
+            <article>
+                <ul>
+                    <li>color</li>
+                    <li>background-color</li>
+                    <li>background-image</li>
+                    <li>display</li>
+                    <li>width</li>
+                    <li>height</li>
+                    <li>min-width</li>
+                    <li>min-height</li>
+                    <li>max-width</li>
+                    <li>max-height</li>
+                    <li>margin</li>
+                    <li>padding</li>
+                    <li>border</li>
+                    <li>border-color</li>
+                    <li>border-width</li>
+                    <li>border-style</li>
+                    <li>border-radius</li>
+                    <li>font</li>
+                    <li>font-family</li>
+                    <li>font-style</li>
+                    <li>font-weight</li>
+                    <li>position</li>
+                    <li>z-index</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="color">
+            <header>
+                <h2>color</h2>
+            </header>
+            <article>
+                <p>The <code>color</code> CSS property sets the foreground color value of an element's text and text
+                    decorations, and
+                    sets the <code>currentcolor</code> value. <code>currentcolor</code> may be used as an indirect value
+                    on other
+                    properties and
+                    is the default for other color properties, such as <code>border-color</code>.</p>
+                <h3>Syntax</h3>
+                <pre>
+                    <code>
+/* Keyword values */
+color: currentcolor;
+
+/* <named-color> values */
+color: red;
+color: orange;
+color: tan;
+color: rebeccapurple;
+
+/* <hex-color> values */
+color: #090;
+color: #009900;
+color: #090a;
+color: #009900aa;
+
+/* <rgb()> values */
+color: rgb(34, 12, 64, 0.6);
+color: rgba(34, 12, 64, 0.6);
+color: rgb(34 12 64 / 0.6);
+color: rgba(34 12 64 / 0.3);
+color: rgb(34 12 64 / 60%);
+color: rgba(34.6 12 64 / 30%);
+
+/* <hsl()> values */
+color: hsl(30, 100%, 50%, 0.6);
+color: hsla(30, 100%, 50%, 0.6);
+color: hsl(30 100% 50% / 0.6);
+color: hsla(30 100% 50% / 0.6);
+color: hsl(30 100% 50% / 60%);
+color: hsla(30.2 100% 50% / 60%);
+
+/* <hwb()> values */
+color: hwb(90 10% 10%);
+color: hwb(90 10% 10% / 0.5);
+color: hwb(90deg 10% 10%);
+color: hwb(1.5708rad 60% 0%);
+color: hwb(0.25turn 0% 40% / 50%);
+
+/* Global values */
+color: inherit;
+color: initial;
+color: revert;
+color: revert-layer;
+color: unset;
+</code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="background-color">
+            <header>
+                <h2>background-color</h2>
+            </header>
+            <article>
+                <p>The <code>background-color</code> CSS property sets the background color of an element.</p>
+                <h3>Syntax</h3>
+                <pre>
+                    <code>
+/* Keyword values */
+background-color: red;
+background-color: indigo;
+
+/* Hexadecimal value */
+background-color: #bbff00; /* Fully opaque */
+background-color: #bf0; /* Fully opaque shorthand */
+background-color: #11ffee00; /* Fully transparent */
+background-color: #1fe0; /* Fully transparent shorthand */
+background-color: #11ffeeff; /* Fully opaque */
+background-color: #1fef; /* Fully opaque shorthand */
+
+/* RGB value */
+background-color: rgb(255, 255, 128); /* Fully opaque */
+background-color: rgba(117, 190, 218, 0.5); /* 50% transparent */
+
+/* HSL value */
+background-color: hsl(50, 33%, 25%); /* Fully opaque */
+background-color: hsla(
+    50,
+    33%,
+    25%,
+    0.75
+); /* 75% opaque, i.e. 25% transparent */
+
+/* Special keyword values */
+background-color: currentcolor;
+background-color: transparent;
+
+/* Global values */
+background-color: inherit;
+background-color: initial;
+background-color: revert;
+background-color: revert-layer;
+background-color: unset;
+</code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="background-image">
+            <header>
+                <h2>background-image</h2>
+            </header>
+            <article>
+                <p>The <code>background-image</code> CSS property sets one or more background images on an element.</p>
+                <pre>
+                    <code>
+background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 0, 0.5),
+    rgba(0, 0, 255, 0.5)
+    ), url("catfront.png");
+
+/* Global values */
+background-image: inherit;
+background-image: initial;
+background-image: revert;
+background-image: revert-layer;
+background-image: unset;
+
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="display">
+            <header>
+                <h2>display</h2>
+            </header>
+            <article>
+                <p>The <code>display</code> CSS property sets whether an element is treated as a block or inline element
+                    and the
+                    layout used for its children, such as flow layout, grid or flex.</p>
+                <p>Formally, the <code>display</code> property sets an element's inner and outer display types. The
+                    outer type sets
+                    an element's participation in flow layout; the inner type sets the layout of children. Some values
+                    of display are fully defined in their own individual specifications; for example the detail of what
+                    happens when <code>display: flex</code> is declared is defined in the CSS Flexible Box Model
+                    specification.</p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="width">
+            <header>
+                <h2>width</h2>
+            </header>
+            <article>
+                <p>The <code>width</code> CSS property sets an element's width. By default, it sets the width of the
+                    content area,
+                    but if <code>box-sizing</code> is set to <code>border-box</code>, it sets the width of the border
+                    area.</p>
+                <p>The <code>min-width</code> and <code>max-width</code> properties override width.</p>
+                <pre>
+                    <code>
+/* <length> values */
+width: 300px;
+width: 25em;
+
+/* <percentage> value */
+width: 75%;
+
+/* Keyword values */
+width: max-content;
+width: min-content;
+width: fit-content(20em);
+width: auto;
+
+/* Global values */
+width: inherit;
+width: initial;
+width: revert;
+width: revert-layer;
+width: unset;
+
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="height">
+            <header>
+                <h2>height</h2>
+            </header>
+            <article>
+                <p>The <code>height</code> CSS property specifies the height of an element. By default, the property
+                    defines the
+                    height of the content area. If <code>box-sizing</code> is set to <code>border-box</code>, however,
+                    it instead
+                    determines the
+                    height of the border area.</p>
+                <p>The <code>min-height</code> and <code>max-height</code> properties override height.</p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="min-width">
+            <header>
+                <h2>min-width</h2>
+            </header>
+            <article>
+                <p>The <code>min-width</code> CSS property sets the minimum width of an element. It prevents the used
+                    value of the
+                    <code>width</code> property from becoming smaller than the value specified for
+                    <code>min-width</code>.
+                </p>
+                <pre>
+                    <code>
+/* <length> values */
+height: 120px;
+height: 10em;
+height: 100vh;
+
+/* <percentage> value */
+height: 75%;
+
+/* Keyword values */
+height: max-content;
+height: min-content;
+height: fit-content(20em);
+height: auto;
+
+/* Global values */
+height: inherit;
+height: initial;
+height: revert;
+height: revert-layer;
+height: unset;                            
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="min-height">
+            <header>
+                <h2>min-height</h2>
+            </header>
+            <article>
+                <p>The <code>min-height</code> CSS property sets the minimum height of an element. It prevents the used
+                    value of the
+                    <code>height</code> property from becoming smaller than the value specified for
+                    <code>min-height</code>.
+                </p>
+                <p>The element's height is set to the value of <code>min-height</code> whenever <code>min-height</code>
+                    is larger than <code>max-height</code>
+                    or <code>height</code>.</p>
+                <pre>
+                    <code>
+/* <length> value */
+min-height: 3.5em;
+
+/* <percentage> value */
+min-height: 10%;
+
+/* Keyword values */
+min-height: max-content;
+min-height: min-content;
+min-height: fit-content(20em);
+
+/* Global values */
+min-height: inherit;
+min-height: initial;
+min-height: revert;
+min-height: revert-layer;
+min-height: unset;
+    
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="max-width">
+            <header>
+                <h2>max-width</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="max-height">
+            <header>
+                <h2>max-height</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="margin">
+            <header>
+                <h2>margin</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="padding">
+            <header>
+                <h2>padding</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="border">
+            <header>
+                <h2>border</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="border-color">
+            <header>
+                <h2>border-color</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="border-width">
+            <header>
+                <h2>border-width</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="border-style">
+            <header>
+                <h2>border-style</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="border-radius">
+            <header>
+                <h2>border-radius</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="font">
+            <header>
+                <h2>font</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="font-family">
+            <header>
+                <h2>font-family</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="font-style">
+            <header>
+                <h2>font-style</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="font-weight">
+            <header>
+                <h2>font-weight</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="position">
+            <header>
+                <h2>position</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+        <section class="main-section" id="z-index">
+            <header>
+                <h2>z-index</h2>
+            </header>
+            <article>
+                <p></p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
+            </article>
+        </section>
+    </main>
+
 </body>
 
 </html>
